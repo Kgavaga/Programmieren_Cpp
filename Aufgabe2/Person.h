@@ -1,11 +1,12 @@
 #pragma once
 #include <string>
 
+enum Nationality{
+    de, en, fr, it, au
+};
+
 class Person{
 public:
-    enum Nationality{
-        de, en, fr, it
-    };
 
 private:
     std::string m_name;
@@ -13,7 +14,6 @@ private:
 
 public:
     Person(std::string name, Nationality nationality);
-    ~Person();
 
     void greet(Person* other);
     std::string getName();

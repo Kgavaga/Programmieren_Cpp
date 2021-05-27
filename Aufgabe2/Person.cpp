@@ -19,6 +19,9 @@ void Person::greet(Person* other)
         case it:
             std::cout << "Ciao " << other->getName() << std::endl;
             break;
+        case au:
+            std::cout << "Servus " << other->getName() << std::endl;
+            break;
     }
 }
 
