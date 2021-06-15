@@ -13,7 +13,8 @@ protected:
 	double _zinssatz;
 
 public:
-	Account(const int blz, const double guthaben, const double zinssatz);
-	virtual void printAll();
-	virtual bool einzahlen(const double betrag) = 0;
+	Account(const int & blz, const double & guthaben, const double & zinssatz);
+	virtual ~Account();
+	virtual void printAll() const;
+	virtual bool einzahlen(const double & betrag) = 0;
 };

@@ -8,10 +8,10 @@
 
 int main()
 {
-	Tagesgeldkonto* k1 = new Tagesgeldkonto(12345678, 100.0, 0.001);
-	Bausparvertrag* k2 = new Bausparvertrag(23456789, 100.0, 0.001, 999);
-	Girokonto* k3 = new Girokonto(34567890, 100.0, 0.001);
-	Account* list[] = { k1, k2, k3 };
+	Tagesgeldkonto k1(12345678, 100.0, 0.001);
+	Bausparvertrag k2(23456789, 100.0, 0.001, 999);
+	Girokonto k3(34567890, 100.0, 0.001);
+	Account* list[] = { &k1, &k2, &k3 };
 
 	for (size_t i = 0; i < std::size(list); i++)
 	{
@@ -32,6 +32,5 @@ int main()
 		list[i]->printAll();
 		std::cout << std::endl;
 	}
-
 	return false;
 }

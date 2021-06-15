@@ -9,7 +9,7 @@ class Place{
     std::string m_name;
 
 public:
-    Place(int x, int y, std::string name);
+    Place(const int x, const int y, const std::string name);
 
     int getX() const;
     int getY() const;

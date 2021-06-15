@@ -1,12 +1,16 @@
 #include "Bausparvertrag.h"
 #include <iostream>
 
-Bausparvertrag::Bausparvertrag(const int blz, const double guthaben, const double zinssatz, const double bausparsumme)
+Bausparvertrag::Bausparvertrag(const int & blz, const double & guthaben, const double & zinssatz, const double & bausparsumme)
 	:Account(blz, guthaben, zinssatz), _bausparsumme(bausparsumme)
 {
 }
 
-bool Bausparvertrag::einzahlen(const double betrag)
+Bausparvertrag::~Bausparvertrag()
+{
+}
+
+bool Bausparvertrag::einzahlen(const double & betrag)
 {
 	if (betrag >= 0 && _guthaben + betrag <= _bausparsumme)
 	{
@@ -16,7 +20,7 @@ bool Bausparvertrag::einzahlen(const double betrag)
 	return false;
 }
 
-void Bausparvertrag::printAll()
+void Bausparvertrag::printAll() const
 {
 	Account::printAll();
 	std::cout << "Bausparsumme: " << _bausparsumme << std::endl;

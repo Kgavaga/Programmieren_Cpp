@@ -1,10 +1,17 @@
 #include "Car.h"
 #include <cmath>
+#include <memory>
+#include <iostream>
 
-Car::Car(const std::string name, const Place* place, const float averageConsumption)
+Car::Car(const std::string& name, const std::shared_ptr<Place>& place, const float averageConsumption)
     :m_name(name), m_place(place), m_averageConsumption(averageConsumption){}
 
-void Car::driveToPlace(const Place* dest)
+Car::~Car()
+{
+    std::cout << "Car object deleted" << std::endl;
+}
+
+void Car::driveToPlace(const std::shared_ptr<Place>& dest)
 {
     m_distance += sqrt(
         pow(abs((m_place->getX()-dest->getX())),2)+
