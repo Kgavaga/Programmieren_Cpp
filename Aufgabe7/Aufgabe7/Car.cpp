@@ -3,6 +3,8 @@
 #include <memory>
 #include <iostream>
 
+using namespace Transport;
+
 Car::Car(const std::string& name, const std::shared_ptr<Place>& place, const float averageConsumption)
     :m_name(name), m_place(place), m_averageConsumption(averageConsumption){}
 

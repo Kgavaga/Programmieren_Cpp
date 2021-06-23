@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Place.h"
 
+using namespace Transport;
 Place::Place(const int x, const int y, const std::string& name)
     : m_pos{ std::make_unique<Position>(x, y) }, m_name(name) {
 }
